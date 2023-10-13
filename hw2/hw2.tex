@@ -1,0 +1,173 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,latexsym,paralist}
+\usepackage{fancyhdr}
+
+\theoremstyle{definition}
+\newtheorem{problem}{Problem}
+\newtheorem*{solution}{Solution}
+\newtheorem*{resources}{Resources}
+
+\newcommand{\name}[2]{\noindent\textbf{Name: #1}\hfill \textbf{UIN: #2}
+  \newcommand{\myName}{#1}
+  \newcommand{\myUIN}{#2}
+}
+\newcommand{\honor}{\noindent On my honor, as an Aggie, I have neither
+  given nor received any unauthorized aid on any portion of the
+  academic work included in this assignment. Furthermore, I have
+  disclosed all resources (people, books, web sites, etc.) that have
+  been used to prepare this homework. \\[2ex]
+ \textbf{Electronic signature:} \underline{ \textbf{(Manas Navale)} } } % type your full name here
+ 
+\newcommand{\checklist}{\noindent\textbf{Checklist:}
+\begin{compactitem}[$\Box$] 
+\item Did you type in your name and UIN? 
+\item Did you disclose all resources that you have used? \\
+(This includes all people, books, websites, etc.\ that you have consulted.)
+\item Did you sign that you followed the Aggie Honor Code? 
+\item Did you solve all problems? 
+\item Did you submit both the .tex and .pdf files of your homework to each correct link on Canvas? 
+\end{compactitem}
+}
+
+\newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
+\newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
+    submission of \textsl{yourLastName-yourFirstName-hw2.tex} and 
+    \textsl{yourLastName-yourFirstName-hw2.pdf} files of this homework is due on
+    \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    \textbf{If any of the two files are missing, you will receive zero points for this homework.}\end{quote} }
+
+\newcommand{\N}{\mathbf{N}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\Z}{\mathbf{Z}}
+
+\fancyhead[L]{\myName}
+\fancyhead[R]{\myUIN}
+\pagestyle{fancy}
+
+\begin{document}
+\begin{center}
+{\large
+CSCE 222 Discrete Structures for Computing -- Fall 2023\\[.5ex]
+Hyunyoung Lee\\}
+\end{center}
+\problemset{2}
+\duedate{Monday, 9/18/2023 11:59 p.m.}
+\name{ (Manas Navale) }{ (333006797) }  % Type your first and last name and UIN here
+% Omit the parentheses surrounding name and UIN.
+% Your name should include your first and last names. 
+% Your name and UIN that you type in here are propagated by LaTeX 
+% to the header part of each page on the PDF output automatically.
+
+\begin{resources} (All people, books, articles, web pages, etc.\ that
+  have been consulted when producing your answers to this homework)
+\end{resources}
+\honor
+
+\bigskip
+
+\noindent
+Total $100$ points.
+
+\bigskip
+
+\noindent
+The intended formatting is that this first page is a cover page and each 
+problem solved on a new page. You only need to fill in your solution between 
+the \verb|\begin{solution}| and \verb|\end{solution}| environment.  
+Please do not change this overall formatting.
+
+\vfill
+\checklist
+
+\newpage
+\begin{problem} ($5+5=10$ points) Section 2.6, Exercise 2.53 (a) and (c). Explain.
+\end{problem}
+\begin{solution}
+  ~\\
+  ~\\
+   (a) 0 values.
+   \\(the equation $a^n+b^n = c^n$ has no values when n is $\geq 3$ )
+   \\(b) 1 values.
+   \\(3, 4, 5)
+\end{solution}
+
+\newpage
+\begin{problem} ($5+5=10$ points) Section 2.6, Exercise 2.54 (b) and (c)
+\end{problem}
+\begin{solution} 
+  ~\\
+  ~\\
+  (b)For every value of x, there exists a value of y such that x is less than y.
+  \\(c) For all values of x and for all values of z, there exists a value of y such that if x is less than z, then both x is less than y and y is less than z.
+\end{solution}
+
+\newpage
+\begin{problem} ($5+5=10$ points) Section 2.7, Exercise 2.58 (a) and (e)
+\end{problem}
+\begin{solution} 
+  ~\\
+  (a)($\forall x \exists y (P(x) \land \neg Q(y))$)
+  \\(e)($\forall x \forall y (P(x) \lor Q(y))$)
+\end{solution}
+
+\newpage
+\begin{problem} ($5+5=10$ points) Section 2.7, Exercise 2.59 (d) and (e)
+\end{problem}
+\begin{solution} 
+  ~\\
+  (d)For all integers a, there exists an integer b such that ($a + b \neq 1001$).
+  \\(e)There exists a positive integer a such that for all positive integers b, ($b \geq a$).
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 2.9, Exercise 2.73
+[Hint: Use the property of ``consecutive integers" and the definition of an ``odd integer".]
+\end{problem}
+\begin{solution} 
+  ~\\
+  \\($ n = m + 1$)
+  \\($ m + n = m + (m + 1)$)
+  \\($ m + n = 2m + 1$)
+  \\Since m is an integer, 2m + 1 is also an integer, and an odd integer is an integer that can be expressed in the form ($2m + 1$)
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 2.9, Exercise 2.80 
+\end{problem}
+\begin{solution}
+  ~\\
+  \\if ($m + n > 100$), then ($m > 40$) or ($n > 60$)
+  \\The negation of this is ($m \leq 40$) and ($ n \leq 60$)
+  \\to prove it by contraposition we need to show the negation implies the negation of the original statement.
+  \\So ($m + n > 100$) is false which means ($m + n \leq 100$).
+  \\Since ($m \leq 40$) and ($ n \leq 60$) then we can combine the two inequalities ($m + n \leq 100$)
+  \\So if ($m \leq 40$) and ($ n \leq 60$) then ($m + n \leq 100$) which is the negation of the original statement.
+  \\So by contraposition this means that ($m + n > 100$), and ($m > 40$) or ($n > 60$)
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 2.9, Exercise 2.84 
+\end{problem}
+\begin{solution} 
+  ~\\
+  \\simplifying the equation ($42m + 70n = 1000$) to ($3m + 5n = 71$)
+  ~\\
+  \\If both 3m and 5n leave a remainder of 2 when divided by their respective divisors, then 3m+5n would leave a remainder of 4 when divided by 3. But 71 divided by 3 leaves a remainder of 2, which is a contradiction.
+\end{solution}
+
+\newpage
+\begin{problem} (15 points) Section 3.3, Exercise 3.20 
+[Hint: Use the definitions of $\subseteq$, $\cup$, and the power set.]
+\end{problem}
+\begin{solution}
+~\\
+  \\Using $X$ be an arbitrary element in $P(A) \cup P(B)$. This implies that $X$ is an element of either $P(A)$ or $P(B)$. 
+  \\Using $X \in P(A)$, which means $X$ is a subset of $A$
+  \\Using $X \in P(B)$, which means $X$ is a subset of $B$.
+  \\Now, consider the union $A \cup B$. Any subset of $A \cup B$ contains elements from both $A$ and $B$. 
+  \\Since $X$ is a subset of either $A$ or $B$ it is also a subset of $A \cup B$ because $A$ and $B$ are both subsets of $A \cup B$. Therefore, $X$ is an element of $P(A \cup B)$.
+  \\So we have shown that any arbitrary element $X$ in $P(A) \cup P(B)$ is also an element of $P(A \cup B)$. Thus, $P(A) \cup P(B) \subseteq P(A \cup B)$.
+\end{solution}
+
+\end{document}
