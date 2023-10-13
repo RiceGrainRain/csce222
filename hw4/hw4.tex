@@ -16,25 +16,26 @@
   academic work included in this assignment. Furthermore, I have
   disclosed all resources (people, books, web sites, etc.) that have
   been used to answer this homework. \\[2ex]
- \textbf{Electronic signature: \underline{ (Manas Navale) } } } % type your full name here
- 
+  \textbf{Electronic signature: \underline{ (Manas Navale) } } } % type your full name here
+
 \newcommand{\checklist}{\noindent\textbf{Checklist:}
-\begin{compactitem}[$\Box$] 
-\item Did you type in your name and UIN? 
-\item Did you disclose all resources that you have used? \\
-(This includes all people, books, websites, etc.\ that you have consulted)
-\item Did you sign that you followed the Aggie Honor Code? 
-\item Did you solve all problems? 
-\item Did you submit both the .tex and .pdf files of your homework to each correct link on Canvas? 
-\end{compactitem}
+  \begin{compactitem}[$\Box$]
+    \item Did you type in your name and UIN?
+    \item Did you disclose all resources that you have used? \\ (This includes all
+    people, books, websites, etc.\ that you have consulted)
+    \item Did you sign that you followed the Aggie Honor Code?
+    \item Did you solve all problems?
+    \item Did you submit both the .tex and .pdf files of your homework to each correct
+    link on Canvas?
+  \end{compactitem}
 }
 
 \newcommand{\problemset}[1]{\begin{center}\textbf{Problem Set #1}\end{center}}
 \newcommand{\duedate}[1]{\begin{quote}\textbf{Due dates:} Electronic
-    submission of \textsl{yourLastName-yourFirstName-hw4.tex} and 
+    submission of \textsl{yourLastName-yourFirstName-hw4.tex} and
     \textsl{yourLastName-yourFirstName-hw4.pdf} files of this homework is due on
     \textbf{#1} on \texttt{https://canvas.tamu.edu}. You will see two separate links
-    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.  
+    to turn in the .tex file and the .pdf file separately. Please do not archive or compress the files.
     \textbf{If any of the two files are missing, you will receive zero points for this homework.}\end{quote} }
 
 \newcommand{\N}{\mathbf{N}}
@@ -47,9 +48,9 @@
 
 \begin{document}
 \begin{center}
-{\large
-CSCE 222 Discrete Structures for Computing -- Fall 2023\\[.5ex]
-Hyunyoung Lee\\}
+  {\large
+    CSCE 222 Discrete Structures for Computing -- Fall 2023\\[.5ex]
+    Hyunyoung Lee\\}
 \end{center}
 \problemset{4}
 \duedate{Friday, 10/13/2023 before 11:59 p.m.}
@@ -72,54 +73,308 @@ Total $100+5$ (bonus) points.
 \bigskip
 
 \noindent
-The intended formatting is that this first page is a cover page and each 
-problem solved on a new page. You only need to fill in your solution between 
-the \verb|\begin{solution}| and \verb|\end{solution}| environment.  
+The intended formatting is that this first page is a cover page and each
+problem solved on a new page. You only need to fill in your solution between
+the \verb|\begin{solution}| and \verb|\end{solution}| environment.
 Please do not change this overall formatting.
 
 \bigskip
 
 \noindent
-\textbf{Make sure that you strictly follow the structure of induction proof as shown in the 
-lecture notes and how I solved in my videos.}
+\textbf{Make sure that you strictly follow the structure of induction proof as shown in the
+  lecture notes and how I solved in my videos.}
 
 \vfill
 \checklist
 
 \newpage
-\begin{problem} (15 points) Section 4.1, Exercise 4.3 
+\begin{problem} (15 points) Section 4.1, Exercise 4.3
 \end{problem}
 \begin{solution}
+  ~\\
+  ~\\
+  Base case:
+  \[
+    S(1) = 1^2 = 1\] and Also \[1 * (1+1) * 3/6
+  \]
+  meaning the base case is satisfied. Induction Hypothesis would be true for all
+  values of $n < m$ By definition
+  \[
+    S(m) = S(m - 1) + m^2
+  \]
+  and then by the inductive step
+  \[
+    S(m - 1) = (m - 1) * (m - 1 + 1) * (2(m - 1)+1)/6
+  \]
+  Since induction step allows us to assume that the step is true for all values
+  of $n < m$. Specifically n = m - 1 We have:
+  \[
+    S(m) = \frac{(m - 1) \cdot (m) \cdot (2m - 1)}{6} + m^2
+  \]
+  By rearranging terms, we get:
+  \[
+    S(m) = \frac{m}{6} \left( (m - 1) \cdot (2m - 1) + 6m \right)
+  \]
+  That is,
+  \[
+    S(m) = \frac{m}{6} \left( 2m^2 - 2m - m + 1 + 6m \right)
+  \]
+  Simplifying further:
+  \[
+    S(m) = \frac{m}{6} \left( 2m^2 + 3m + 1 \right)
+  \]
+  And finally,
+  \[
+    S(m) = \frac{m}{6} (m+1)(2m + 1)
+  \]
+  Therefore, the hypothesis is true for \(m\).
+
+\end{solution}
+\newpage
+\begin{problem} (15 points) Section 4.1, Exercise 4.4
+\end{problem}
+\begin{solution}
+  ~\\
+  ~\\
+  Base case:
+  For \(n = 1\), we have:
+  \[
+    1^3 = \left(\frac{1(1+1)}{2}\right)^2
+  \]
+  This simplifies to \(1 = 1\), which is true. ~\\ ~\\ Inductive Hypothesis:
+  Assume that the formula holds for some positive integer \(k\):
+  \[
+    1^3 + 2^3 + 3^3 + \ldots + k^3 = \left(\frac{k(k+1)}{2}\right)^2
+  \]
+  \text{Simplify:}
+  \[
+    1^3 + 2^3 + 3^3 + \ldots + k^3 + (k+1)^3 = \left(\frac{k(k+1)}{2}\right)^2 + (k+1)^3
+  \]
+  \text{Factor:}
+  \[
+    \frac{k^2(k+1)^2}{4} + \frac{4(k+1)^3}{4} = \frac{k^2(k+1)^2 + 4(k+1)^3}{4}
+  \]
+  \text{Factor Out a Common Factor:}
+  \[
+    (k+1)^2\left(\frac{k^2 + 4(k+1)}{4}\right)
+  \]
+  \text{Simplify the Expression Inside the Parentheses:}
+  \[
+    (k+1)^2\left(\frac{k^2 + 4k + 4}{4}\right) = (k+1)^2\left(\frac{(k+2)^2}{4}\right)
+  \]
+  \text{Further Simplify:}
+  \[
+    (k+1)^2\left(\frac{(k+2)^2}{4}\right) = \left(\frac{(k+1)(k+2)}{2}\right)^2
+  \]
+
+  Based on this we have shown that the sum of the cubes of the first $(n)$
+  natural numbers is equal to $\left(\frac{n(n+1)}{2}\right)^2$.
 \end{solution}
 
 \newpage
-\begin{problem} (15 points) Section 4.1, Exercise 4.4 
+\begin{problem} (15 points) Section 4.1, Exercise 4.5
 \end{problem}
 \begin{solution}
+  ~\\
+  ~\\
+  Base Case:
+  For \(n = 1\), we have:
+  \[
+    1^2 = \frac{1}{3}(4(1^3) - 1) = \frac{1}{3}(4 - 1) = \frac{1}{3}(3) = 1
+  \]
+  This is true for the base case. ~\\ ~\\ Inductive Hypothesis: Assume that the
+  formula holds for some positive integer \(k\):
+  \[
+    1^2 + 3^2 + 5^2 + \ldots + (2k-1)^2 = \frac{1}{3}(4k^3 - k)
+  \]
+  ~\\
+  ~\\
+  Inductive Step
+  We want to prove for $(k + 1)$:
+  \text{Assume Hypothesis:}
+  \[
+    1^2 + 3^2 + 5^2 + \ldots + (2k-1)^2 + (2(k+1)-1)^2 = \frac{1}{3}(4(k+1)^3 - (k+1))
+  \]
+
+  \text{Simplify:}
+  \[
+    1^2 + 3^2 + 5^2 + \ldots + (2k-1)^2 + (2(k+1)-1)^2 = \frac{1}{3}(4k^3 - k) + (2(k+1)-1)^2
+  \]
+
+  \text{Factor:}
+  \[
+    \frac{1}{3}(4k^3 - k) + (2(k+1)-1)^2 = \frac{1/3}(4k^3 - k) + (2k + 2 - 1)^2
+  \]
+
+  \text{Simplify:}
+  \[
+    \frac{1}{3}(4k^3 - k) + (2k + 1)^2 = \frac{1}{3}(4k^3 - k) + 4k^2 + 4k + 1
+  \]
+
+  \text{Conclude:}
+  By combining terms, we get
+  \[
+    \frac{1}{3}(4k^3 - k + 9k^2 + 12k + 3)
+  \]
+
+  Factor and simplify further:
+  \[
+    \frac{(k+1)(4k^2 + 5k + 3)}{3}
+  \]
+
+  Simplify:
+  \[
+    \frac{(k+1)(4k^2 + 5k + 3)}{3}
+  \]
+
+  Factor the quadratic expression:
+  \[
+    \frac{(k+1)(4k+3)(k+1)}{3}
+  \]
+
+  Simplify the right side to get
+  \[
+    \frac{4(k+1)(k+1)(k+1)}{3}
+  \]
+  By mathematical induction, we have shown that the sum of the squares of the
+  first $(n)$ odd positive integers is given by $((1/3)*(4n^3 - n))$.
 \end{solution}
 
 \newpage
-\begin{problem} (15 points) Section 4.1, Exercise 4.5 
+\begin{problem} (20 points) Section 4.1, Exercise 4.6
 \end{problem}
 \begin{solution}
-\end{solution}
-
-\newpage
-\begin{problem} (20 points) Section 4.1, Exercise 4.6 
-\end{problem}
-\begin{solution} 
+  ~\\
+  ~\\
+  Base Case:
+  For \(n = 1\), we have:
+  \[
+    22^1 - 1 = 22 - 1 = 21
+  \]
+  Since 21 is divisible by 3, the formula holds for the base case. Inductive
+  Hypothesis: Assume that the formula holds for some positive integer \(k\):
+  \[
+    22^k - 1\text{ is divisible by 3.}
+  \]
+  Inductive Step: Prove: \(22^{k+1} - 1\) is divisible by 3. \text{Start with the
+    left side and use the inductive hypothesis:}
+  \[
+    22^{k+1} - 1 = 22 \cdot 22^k - 1 = 21 \cdot 22^k + 22^k - 1
+  \]
+  \text{Factor out \(22^k\) from the first term:}
+  \[
+    21 \cdot 22^k + 22^k - 1 = 22^k(21 + 1) - 1
+  \]
+  \text{Simplify:}
+  \[
+    22^k(22) - 1 = 22(22^k) - 1
+  \]
+  \text{Since \(22^k - 1\) is divisible by 3 (by the inductive hypothesis), express it as \(3m\) for some positive integer \(m\):}
+  \[
+    22(22^k) - 1 = 22(3m) = 3(22m)
+  \]
+  \text{Since \(22m\) is also a positive integer, we can see that \(22^{k+1} - 1\) is divisible by 3.}
+  ~\\
+  By mathematical induction, we've shown that \(22^n - 1\) is divisible by 3 for all positive integers \(n\).
 \end{solution}
 
 \newpage
 \begin{problem} (20 points) Section 4.3, Exercise 4.15
 \end{problem}
-\begin{solution} 
+\begin{solution}
+  ~\\
+  ~\\
+  Base Case:
+  For \(n = 1\), we have:
+  \[
+    f_2 = 1, \text{ and } f_3 - 1 = 2 - 1 = 1.
+  \]
+  So, the formula holds for the base case.
+
+  Inductive Hypothesis: Assume: \(f_2 + f_4 + \ldots + f_{2k} = f_{2k+1} - 1\).
+
+  Inductive Step: Prove: $f_2 + f_4 + \ldots + f_{2(k+1)} = f_{2(k+1)+1} - 1$.
+  \text{Start with the left side and use the inductive hypothesis:}
+  \[
+    f_2 + f_4 + \ldots + f_{2k} + f_{2(k+1)} = f_{2k+1} - 1 + f_{2(k+1)}.
+  \]
+  \text{Use the Fibonacci sequence property:}
+  \[
+    f_{2k+1} - 1 + f_{2(k+1)} = f_{2k+1} + f_{2k} - 1.
+  \]
+  \text{Simplify:}
+  \[
+    f_{2k+1} + f_{2k} = f_{2k-1} + f_{2k-2} + f_{2k}.
+  \]
+  \text{Apply the Fibonacci sequence property:}
+  \[
+    f_{2k-1} + f_{2k-2} + f_{2k} = f_{2k-1} + f_{2k-1} - 1 = 2f_{2k-1} - 1.
+  \]
+  \text{Apply the Fibonacci sequence property again:}
+  \[
+    2f_{2k-1} = f_{2k}.
+  \]
+  \text{So, we have:}
+  \[
+    f_{2k} - 1 = f_{2k} - 1.
+  \]
+  This proves that the formula holds for $(k + 1)$. So by mathematical induction,
+  we have shown that the sum of even Fibonacci numbers $(f_2 + f_4 + \ldots +
+    f_{2n})$ is indeed equal to $f_{2n+1} - 1$.
 \end{solution}
 
 \newpage
 \begin{problem} (20 points) Section 4.6, Exercise 4.31
 \end{problem}
-\begin{solution} 
+\begin{solution}
+  ~\\
+  ~\\
+  Base Case:
+  For \(n = 4\), we have:
+  \[
+    n = 4 \text{ or } n -3 = 1
+  \]
+  \[
+    f_4 = 4(4-1)(4-2)f_1
+  \]
+  \[
+    f_4 = 4 * 3 * 2 * 1 = 4!
+  \]
+  \[
+    f_4 = 4!
+  \]
+  ~\\
+  ~\\
+  Inductive Hypothesis:
+  Assume given relation is true for $n = k$
+  \[
+    f_k = k(k-1)(k-2)f_{k-3}
+  \]
+  \[
+    f_{k-1} = (k-1)(k-2)(k-3)f_{k-4}
+  \]
+  all are true ~\\ ~\\ Inductive Step: To prove relation is true for $n=k+1$ or
+  \[
+    f_{k+1} = (k+1)(k)(k-1)f_{k-2}
+  \]
+  ~\\
+  ~\\
+  From:
+  \[
+    f_{k-2} = (k-2)(k-3)(k-4)f_{k-5}
+  \]
+  \[
+    f_{k-5} = (k-5)(k-6)(k-7)f_{k-8}
+  \]
+  \[
+    f_4 = 4(4-1)(4-2)f_1
+  \]
+  ~\\
+  ~\\
+  Putting all of the values in $f_{k+1} = (k+1)(k)(k-1)f_{k-2}$ proves
+  \[
+    f_{k+1} = (k+1)!
+  \]
 \end{solution}
 
 \end{document}
